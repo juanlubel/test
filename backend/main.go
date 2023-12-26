@@ -4,10 +4,10 @@ import (
 	"salu2/backend/src/server"
 )
 
-type Data struct {
-	Message string
-	Nunce   string
-}
+//type Data struct {
+//	Message string
+//	Nunce   string
+//}
 
 func main() {
 	// Manejador para servir archivos estáticos desde el directorio actual.
