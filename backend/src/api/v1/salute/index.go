@@ -21,4 +21,5 @@ import (
 func CreateSaluteSubrouter(v1 *mux.Router) {
 	saluteSubrouter := core.Subrouter(v1, "/salute")
 	saluteSubrouter.HandleFunc("", RootHandler)
+	saluteSubrouter.HandleFunc("/login", LoginHandler)
 }

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/gorilla/mux"
 	"net/http"
+	"salu2/backend/src/api/v1/login"
 	"salu2/backend/src/api/v1/salute"
 	"salu2/backend/src/core"
 	"strings"
@@ -38,8 +39,12 @@ func New(config *Config) {
 // Finally, it returns the salute Subrouter, which is the main router for the server.
 func Router() *mux.Router {
 	r := mux.NewRouter()
+	r.HandleFunc("/hola", func(writer http.ResponseWriter, request *http.Request) {
+		writer.Write([]byte("hola"))
+	})
 	v1 := createVersionedSubrouter(r, "/v1")
 	salute.CreateSaluteSubrouter(v1)
+	login.CreateLoginSubrouter(v1)
 	return v1
 }
 
