@@ -2,3 +2,4 @@
 /.idea
 /Writerside
 /node_modules
+/playwright-report
