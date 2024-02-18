@@ -1,0 +1,15 @@
+package components
+
+type RenderUser struct {
+	Email string
+	Avatar string
+	LastConnection string
+}
+
+templ UserList(users []RenderUser) {
+  @List() {
+    for _, data := range users {
+      @User(data.Email, data.Avatar, data.LastConnection)
+    }
+  }
+}

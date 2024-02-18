@@ -1,0 +1,33 @@
+package pages
+
+import (
+    "salu2/src/pages/components"
+)
+
+templ Main() {
+	<html lang="en">
+	<head>
+	    <meta charset="UTF-8" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	    <title>Saludos</title>
+	    <link rel="icon" href="/static/favicon.ico" type="image/x-icon" />
+	    <link rel="stylesheet" href="/static/style.css" />
+        <!-- Include the Alpine library on your page -->
+        <script src="https://unpkg.com/alpinejs" defer></script>
+        <!-- Include the TailwindCSS library on your page -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+        <script src="/static/lib/htmx.1.9.10.js"></script>
+		<script src="https://unpkg.com/htmx.org/dist/ext/path-params.js"></script>
+
+	</head>
+	<body class="dark" >
+	 @components.Sidebar()
+	 <div class="content">
+	 @components.Navbar()
+	 <div id="scaffold" />
+	 </div>
+	</body>
+	</html>
+}

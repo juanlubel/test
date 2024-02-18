@@ -1,0 +1,47 @@
+package components
+
+templ Sidebar() {
+     <!-- Sidebar -->
+     <div
+     class="sidebar"
+     x-data="{ page: 'dashboard', toggle(page) { this.page = page } }"
+     hx-get="/dashboard" hx-target="#scaffold"
+     hx-trigger="load"
+     >
+         <a href="#" class="logo">
+	         <div class="image bx">
+				 <img class="rounded-full " src="/static/favicon.ico" alt="Favicon" />
+	         </div>
+             <div class="logo-name"><span>Salu</span>dos</div>
+         </a>
+         <ul class="side-menu">
+             <li
+                :class="page == 'dashboard' ? 'active' : '' "
+                hx-get="/dashboard" hx-target="#scaffold"
+                x-on:click="toggle('dashboard')">
+                <a href="#"><i class='bx bxs-dashboard'></i>Dashboard</a>
+             </li>
+             <li
+                :class="page == 'users' ? 'active' : '' "
+                hx-get="/users" hx-target="#scaffold"
+                x-on:click="toggle('users')">
+                <a href="#"><i class='bx bx-group'></i>Users</a>
+             </li>
+             <li
+                :class="page == 'settings' ? 'active' : '' "
+                hx-get="/settings" hx-target="#scaffold"
+                x-on:click="toggle('settings')">
+                <a href="#"><i class='bx bx-cog'></i>Settings</a>
+             </li>
+         </ul>
+         <ul class="side-menu">
+             <li>
+                 <a href="#" class="logout">
+                     <i class='bx bx-log-out-circle'></i>
+                     Logout
+                 </a>
+             </li>
+         </ul>
+     </div>
+     <!-- End of Sidebar -->
+}

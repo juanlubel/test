@@ -1,8 +1,7 @@
-package salute
+package root
 
 import (
 	"github.com/gorilla/mux"
-	"salu2/backend/src/core"
 )
 
 // CreateSaluteSubrouter creates a subrouter for handling salute routes.
@@ -19,7 +18,8 @@ import (
 //		return v1
 //	}
 func CreateSaluteSubrouter(v1 *mux.Router) {
-	saluteSubrouter := core.Subrouter(v1, "/salute")
-	saluteSubrouter.HandleFunc("", RootHandler)
-	saluteSubrouter.HandleFunc("/login", LoginHandler)
+	//saluteSubrouter := core.Subrouter(v1, "/")
+	v1.HandleFunc("/", RootHandler)
+	v1.HandleFunc("/error", ErrorHandler)
+	v1.HandleFunc("/login", LoginHandler)
 }

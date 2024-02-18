@@ -1,0 +1,21 @@
+package components
+
+templ User(email, avatar, lastConnection string) {
+    <div class="flex flex-col items-start justify-start h-auto pl-4 mx-0 mb-12 border-l border-transparent lg:w-1/3 lg:mb-0 lg:pl-8 lg:ml-8 lg:border-gray-200 min-w-80 max-w-96">
+        <div class="flex items-center justify-center w-full" >
+            <div class="w-16 h-16 mr-4 overflow-hidden rounded-full">
+                <img src={ avatar }
+                    class="object-cover w-full h-full" />
+            </div>
+            <div class="flex flex-col items-start justify-center">
+                <h4 class="font-bold">{ email }</h4>
+            </div>
+            <div class="flex-auto max-w-64" ></div>
+            <div class="w-8 h-8 mr-4 overflow-hidden rounded-full ">
+                <img src="/static/saludos.png"
+                    class="object-cover w-full h-full" />
+            </div>
+        </div>
+        <blockquote class="mt-8 text-lg text-gray-500">"Última conexión "{ lastConnection }</blockquote>
+    </div>
+}

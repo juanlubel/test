@@ -1,0 +1,13 @@
+package components
+
+templ Navbar() {
+          <nav >
+                  <div class="welcome" hx-get="/v1/user/welcome" hx-trigger="load">
+                  </div>
+                  <div style="flex: 1" />
+	              <a class="profile" >
+	              <div hx-get="/v1/user/picture" hx-trigger="load">
+	              </div>
+	              </a>
+          </nav>
+}

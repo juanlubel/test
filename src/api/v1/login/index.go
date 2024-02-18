@@ -2,7 +2,7 @@ package login
 
 import (
 	"github.com/gorilla/mux"
-	"salu2/backend/src/core"
+	"salu2/src/core"
 )
 
 func CreateLoginSubrouter(v1 *mux.Router) {
