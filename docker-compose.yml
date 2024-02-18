@@ -1,0 +1,25 @@
+version: "3.8"
+
+networks:
+  proxy:
+    external:
+      true
+
+services:
+  saludos:
+    image: registry.spu-labs.dev/saludos
+    container_name: "saludos-home"
+    expose:
+      - 8080
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.saludos.rule=Host(`saludos.estupideas.es`) && PathPrefix(`/`)"
+      - "traefik.http.routers.saludos.entrypoints=websecure"
+      - "traefik.http.routers.saludos.tls=true"
+      - "traefik.http.routers.saludos.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.saludos.middlewares=cspsaludos@file"
+      - "traefik.http.services.saludos.loadbalancer.server.port=8080"
+    env_file:
+      - ./.env

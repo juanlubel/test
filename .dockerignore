@@ -1,0 +1,8 @@
+/Writerside
+/internal
+/.git
+/.idea
+docker-compose.yml
+.gitignore
+qodana.yaml
+Makefile
