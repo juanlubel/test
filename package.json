@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "@playwright/test": "^1.41.2",
+    "playwright": "latest"
+  },
+  "name": "salu2",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
